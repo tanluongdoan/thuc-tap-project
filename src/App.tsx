@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import getData from './api/firebase';
+import TicketApp from './app/TicketApp';
+import { actionCreators } from './state';
+import { RootState } from './state/reducers';
+const App: React.FC = () => {
+    const dispatch = useDispatch();
+    const dataFirebase = useSelector((state: RootState) => state.dataFirebase);
+    console.log(dataFirebase);
+    const { fetchFirebase, fetchFirebaseSuccess, fetchFirebaseDefault } =
+        bindActionCreators(actionCreators, dispatch);
+    useEffect(() => {
+        fetchFirebase();
+        getData
+            .then((e: object) => {
+                // console.log(e);
+                fetchFirebaseSuccess(e);
+            })
+            .catch((e: object) => {
+                // console.log(e);
+                fetchFirebaseDefault();
+            });
+    }, []);
+    return (
+        <div id="main">
+            <TicketApp />
+        </div>
+    );
+};
 
 export default App;
