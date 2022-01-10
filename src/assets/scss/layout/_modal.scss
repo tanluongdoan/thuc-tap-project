@@ -1,0 +1,73 @@
+//===========================
+//============= modal ==============
+//===========================
+@mixin textSpan() {
+    font-weight: 600;
+    margin-bottom: 4px;
+    display: block;
+    font-size: 16px;
+}
+.ant-modal-content {
+    border-radius: 10px;
+    .ant-modal-close {
+        display: none;
+    }
+    .ant-modal-footer {
+        display: none;
+    }
+    .ant-modal-body {
+    }
+}
+
+.box-modal {
+    &-title {
+        @include dCenter();
+        span {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 1.5;
+
+            text-align: center;
+        }
+    }
+    &-day {
+        margin-top: 25px;
+        &-content {
+            span {
+                @include textSpan();
+            }
+        }
+    }
+    &-tinh-trang {
+        margin: 15px 0;
+        span {
+            @include textSpan();
+        }
+        .ant-radio-group {
+            @include dBetween();
+            label {
+                @include dBetween();
+                span {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    &-check {
+        margin: 15px 0;
+        span {
+            @include textSpan();
+        }
+        .row1,
+        .row2 {
+            margin-top: 2px;
+            span {
+                font-weight: 500;
+            }
+        }
+    }
+    &-button {
+        margin-top: 35px;
+        @include dCenter();
+    }
+}

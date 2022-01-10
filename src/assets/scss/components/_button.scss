@@ -1,0 +1,45 @@
+/// button filter
+
+.btn-filter {
+    padding: 11px 16px;
+    border: 1px solid $primary1;
+    border-radius: 6px;
+    background-color: $white;
+    cursor: pointer;
+
+    @include dCenter();
+
+    span {
+        font-weight: bold;
+        font-size: 18px;
+        color: $primary1;
+        margin-left: 12px;
+    }
+}
+.btn-import {
+    display: inline-block;
+    padding: 11px 16px;
+    border: 1px solid $primary1;
+    border-radius: 6px;
+    background-color: $white;
+    cursor: pointer;
+
+    font-weight: bold;
+    font-size: 18px;
+    color: $primary1;
+    margin-left: 12px;
+}
+.btn-modal {
+    font-weight: bold;
+    font-size: 18px;
+    color: $primary1;
+
+    padding: 11px 63px;
+    border: 1px solid $primary1;
+    border-radius: 8px;
+    background-color: $white;
+    &:hover {
+        background-color: $primary1;
+        color: $white;
+    }
+}

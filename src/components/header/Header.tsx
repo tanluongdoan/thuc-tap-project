@@ -1,8 +1,8 @@
 import { Col, Row } from 'antd';
 import React from 'react';
+import Search from '../search/Search';
 import HeaderMessage from './HeaderMessage';
 import HeaderNotification from './HeaderNotification';
-import HeaderSearch from './HeaderSearch';
 import HeaderUser from './HeaderUser';
 
 const Header: React.FC = () => {
@@ -10,7 +10,7 @@ const Header: React.FC = () => {
         <div id="header">
             <Row>
                 <Col flex="470px">
-                    <HeaderSearch />
+                    <Search children={'Search'} background={'#EDEDED'} />
                 </Col>
                 <Col flex="auto">
                     <div className="header-right">

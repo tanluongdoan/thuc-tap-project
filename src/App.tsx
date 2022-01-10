@@ -8,7 +8,7 @@ import { RootState } from './state/reducers';
 const App: React.FC = () => {
     const dispatch = useDispatch();
     const dataFirebase = useSelector((state: RootState) => state.dataFirebase);
-    console.log(dataFirebase);
+    // console.log(dataFirebase);
     const { fetchFirebase, fetchFirebaseSuccess, fetchFirebaseDefault } =
         bindActionCreators(actionCreators, dispatch);
     useEffect(() => {

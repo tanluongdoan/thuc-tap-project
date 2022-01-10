@@ -2,11 +2,13 @@ import { Col, Row } from 'antd';
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from '../components/header/Header';
+import ModalManager from '../components/modalManager/ModalManager';
 import Home from '../components/pages/home/Home';
 import TicketCheck from '../components/pages/ticketCheck/TicketCheck';
 import TickManager from '../components/pages/ticketManager/TickManager';
 import TickService from '../components/pages/tickSetting/tickService/TickService';
 import Sidebar from '../components/sidebar/Sidebar';
+import A from '../components/test/A';
 const TicketApp: React.FC = () => {
     return (
         <Router>
@@ -29,6 +31,8 @@ const TicketApp: React.FC = () => {
                     </div>
                 </Col>
             </Row>
+            <ModalManager />
+            <A />
         </Router>
     );
 };

@@ -1,6 +1,7 @@
 //=======================================
 //=== style scss
 //=======================================
+@import './abstracts/mixin';
 @import './abstracts/variables';
 //=======================================
 //=== base
@@ -11,9 +12,18 @@
 //=== components
 //=======================================
 @import './components/menu';
+@import './components/search';
+@import './components/button';
+@import './components/table';
+@import './components/datePiker';
 //=======================================
 //=== layouts
 //=======================================
 
 @import './layout/sidebar';
 @import './layout/header';
+@import './layout/modal';
+//=======================================
+//=== pages
+//=======================================
+@import './pages/tickManager';
