@@ -1,6 +1,7 @@
 import React from 'react';
 import { TypeTinhTrang } from './config.type';
 import TinhTrang from './TinhTrang';
+import Update from './Update';
 interface typeColumn {
     title: string;
     dataIndex: string;
@@ -17,19 +18,34 @@ export const columns: Array<typeColumn> = [
         key: 'stt',
     },
     {
-        title: 'Booking code',
-        dataIndex: 'bookingCode',
-        key: 'bookingCode',
+        title: 'Mã gói',
+        dataIndex: 'maGoi',
+        key: 'maGoi',
     },
     {
-        title: 'Số vé',
-        dataIndex: 'soVe',
-        key: 'soVe',
+        title: 'Tên gói vé',
+        dataIndex: 'tenGoiVe',
+        key: 'tenGoiVe',
     },
     {
-        title: 'Tên sự kiện',
-        key: 'tenSuKien',
-        dataIndex: 'tenSuKien',
+        title: 'Ngày áp dụng',
+        key: 'ngayApDung',
+        dataIndex: 'ngayApDung',
+    },
+    {
+        title: 'Ngày hết hạn',
+        key: 'ngayHetHan',
+        dataIndex: 'ngayHetHan',
+    },
+    {
+        title: 'Giá vé (VNĐ/Vé)',
+        key: 'giaVe',
+        dataIndex: 'giaVe',
+    },
+    {
+        title: 'Giá Combo (VNĐ/Combo)',
+        key: 'giaCombo',
+        dataIndex: 'giaCombo',
     },
     {
         title: 'Tình trạng sử dụng',
@@ -45,27 +61,20 @@ export const columns: Array<typeColumn> = [
                     return (
                         <TinhTrang
                             class={'chua-su-dung'}
-                            text={'Chưa sử dụng'}
+                            text={'Đang áp dụng'}
                         />
                     );
                 default:
-                    return <TinhTrang class={'het-han'} text={'Hết hạn'} />;
+                    return <TinhTrang class={'het-han'} text={'Tắt'} />;
             }
         },
     },
     {
-        title: 'Ngày sử dụng',
-        key: 'ngaySuDung',
-        dataIndex: 'ngaySuDung',
-    },
-    {
-        title: 'Ngày xuất vé',
-        key: 'ngayXuatVe',
-        dataIndex: 'ngayXuatVe',
-    },
-    {
-        title: 'Cổng check-in',
-        key: 'check',
-        dataIndex: 'check',
+        title: '',
+        key: 'update',
+        dataIndex: 'update',
+        render: () => {
+            return <Update />;
+        },
     },
 ];

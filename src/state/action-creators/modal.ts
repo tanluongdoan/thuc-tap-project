@@ -17,8 +17,24 @@ export const modalManagerClose = () => {
         });
     };
 };
+//===============================================
+export const modalSettingOpen = () => {
+    return (dispatch: Dispatch<ActionModal>) => {
+        dispatch({
+            type: ActionType.MODAL_SETTING_OPEN,
+        });
+    };
+};
 
-export const modalManagerData = (data:any) => {
+export const modalSettingClose = () => {
+    return (dispatch: Dispatch<ActionModal>) => {
+        dispatch({
+            type: ActionType.MODAL_SETTING_CLOSE,
+        });
+    };
+};
+
+export const modalManagerData = (data: any) => {
     return (dispatch: Dispatch<ActionModal>) => {
         dispatch({
             type: ActionType.MODAL_MANAGER_DATA,

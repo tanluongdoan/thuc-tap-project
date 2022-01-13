@@ -1,0 +1,35 @@
+//=============================
+// home
+//=============================
+#home {
+    .home-top {
+        margin-top: 32px;
+        .text {
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+    .home-chart-area {
+        margin-top: 25px;
+        .text {
+            margin: 30px;
+            .sub-text {
+                font-weight: 500;
+                font-size: 14px;
+                opacity: 0.5;
+            }
+            .price {
+                .number {
+                    font-weight: bold;
+                    font-size: 24px;
+                }
+                .vnd {
+                    font-weight: 500;
+                    font-size: 14px;
+                    margin-left: 4px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

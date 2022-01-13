@@ -4,7 +4,7 @@ import { columns } from './config';
 import IconPrev from '../icons/IconPrev';
 import IconNext from '../icons/IconNext';
 
-const TableManager = (props: any) => {
+const TableCheck = (props: any) => {
     function itemRender(current: number, type: string, originalElement: any) {
         if (type === 'prev') {
             return (
@@ -38,4 +38,4 @@ const TableManager = (props: any) => {
     );
 };
 
-export default TableManager;
+export default TableCheck;

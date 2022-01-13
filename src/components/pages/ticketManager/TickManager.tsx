@@ -12,28 +12,9 @@ const TickManager = () => {
         dataFilter: {},
         dataTable: data,
     });
-    //============================================
-    // search
-    //============================================
-    const handleSearch = (e: string) => {
-        let dt = [{}];
-        if (e) {
-            dt = data.filter(function (item: any) {
-                return (
-                    item.tenSuKien.toLowerCase().indexOf(e.toLowerCase()) !== -1
-                );
-            });
-        }
-        // setState({
-        //     ...state,
-        //     dataTable: dt,
-        // });
-        console.log(dt);
-    };
-    handleSearch('2022');
     return (
-        <div id="tick-manager">
-            <Title children={'  Danh sách vé'} />
+        <div id="tick-manager" className="page-content">
+            <Title children={'Danh sách vé'} />
 
             <Row className="tick-manager-header">
                 <Col span={8}>

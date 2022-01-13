@@ -13,7 +13,10 @@ const ModalManager = () => {
     //======================================
     const dispatch = useDispatch();
     const isModal = useSelector((state: any) => state.modal.isModalManager);
-    const { modalManagerClose,modalManagerData } = bindActionCreators(actionCreators, dispatch);
+    const { modalManagerClose, modalManagerData } = bindActionCreators(
+        actionCreators,
+        dispatch
+    );
     //======================================
     // state component
     //======================================
@@ -105,19 +108,19 @@ const ModalManager = () => {
             });
         }
     };
-//===================================================
-// nút submit
-//===================================================
-const handleSubmit = ()=>{
-    modalManagerData(state);
-    modalManagerClose()
-
-}
+    //===================================================
+    // nút submit
+    //===================================================
+    const handleSubmit = () => {
+        modalManagerData(state);
+        modalManagerClose();
+    };
     return (
         <Modal visible={isModal} width={634}>
             <form
                 className="box-modal"
-                onSubmit={(e: any) => e.preventDefault()}>
+                onSubmit={(e: any) => e.preventDefault()}
+            >
                 <div className="box-modal-title">
                     <span>Lọc vé</span>
                 </div>
@@ -148,7 +151,8 @@ const handleSubmit = ()=>{
                     <span>Tình trạng sử dụng</span>
                     <Radio.Group
                         onChange={onChangeRadio}
-                        value={state.tinhTrang}>
+                        value={state.tinhTrang}
+                    >
                         <Radio value={0}>Tất cả</Radio>
                         <Radio value={1}>Đã sử dụng</Radio>
                         <Radio value={2}>Chưa sử dụng</Radio>
@@ -160,7 +164,8 @@ const handleSubmit = ()=>{
                     <Checkbox.Group
                         style={{ width: '100%' }}
                         value={state.checkIn}
-                        onChange={onChangeCheck}>
+                        onChange={onChangeCheck}
+                    >
                         <Row className="row1">
                             <Col span={8}>
                                 <Checkbox value="all">Tất cả</Checkbox>
@@ -197,10 +202,10 @@ const handleSubmit = ()=>{
                 </div>
                 <div className="box-modal-button">
                     <button
-                        onClick={() => handleSubmit()
-                        }
+                        onClick={() => handleSubmit()}
                         className="btn-modal"
-                        type="submit">
+                        type="submit"
+                    >
                         {' '}
                         Lọc
                     </button>

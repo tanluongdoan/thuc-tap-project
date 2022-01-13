@@ -13,6 +13,7 @@
 
         padding: 8px 12px 8px 12px;
         border-radius: 8px;
+        color: $text-color;
         &:focus,
         &:hover {
             border-color: $primary;
@@ -32,7 +33,7 @@
     &-content {
         position: absolute;
         top: 100%;
-        left: 0;
+
         box-shadow: 4px 4px 45px rgba(109, 46, 0, 0.35);
         border-radius: 20px;
         background: #ffffff;
@@ -156,5 +157,41 @@
                 }
             }
         }
+    }
+}
+.icon-calendar {
+    stroke: $primary1;
+}
+.module2 {
+    width: 180px;
+    .date-piker-content {
+        left: 0;
+    }
+}
+.module1 {
+    width: 180px;
+    .date-piker-content {
+        right: 0;
+    }
+}
+.module4 {
+    width: 180px;
+    .date-piker-content {
+        right: 0;
+    }
+    input {
+        background-color: #f7f8fb;
+    }
+}
+.module3 {
+    width: 180px;
+    .date-piker-content {
+        right: 0;
+    }
+    input {
+        background-color: #e0e0e0;
+    }
+    .icon-calendar {
+        stroke: #a5a8b1;
     }
 }

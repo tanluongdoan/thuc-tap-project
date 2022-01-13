@@ -5,7 +5,7 @@ import TickDatePiker from './TickDatePiker';
 import { TypeDay } from './type';
 
 const DatePiker = (props: any) => {
-    const { activeDate, setActiveDate } = props;
+    const { activeDate, setActiveDate, module } = props;
     const [state, setState] = useState({
         date: 0,
         month: 0,
@@ -90,21 +90,53 @@ const DatePiker = (props: any) => {
     ///================================================
     ///================================================
     ///================================================
+    // set giá trị input
+    ///================================================
+    let inputDate = activeD < 10 ? `0${activeD}` : activeD;
+    let inputMonth =
+        activeMonth + 1 < 10 ? `0${activeMonth + 1}` : activeMonth + 1;
+    let inputModule2 = `${inputDate}/${inputMonth}/${activeYear}`;
+    let inputModule1 = `Tháng ${activeMonth + 1}, ${activeYear}`;
+    let classModule;
+    let inputValue;
+    switch (module) {
+        case 1:
+            inputValue = inputModule1;
+            classModule = 'module1';
+            break;
+        case 2:
+            inputValue = inputModule2;
+            classModule = 'module2';
+            break;
+        case 3:
+            inputValue = inputModule2;
+            classModule = 'module3';
+            break;
+        case 4:
+            inputValue = 'dd/mm/yy';
+            classModule = 'module4';
+            break;
+        case 5:
+            inputValue = 'dd/mm/yy';
+            classModule = 'module2';
+            break;
 
+        default:
+            inputValue = inputModule1;
+            break;
+    }
+    //=========================================================
+    let classShow = show ? '' : 'd-none';
+
+    //======================================================
     return (
-        <div className="date-piker">
-            <Input
-                value={`${activeD < 10 ? `0${activeD}` : activeD}/${
-                    activeMonth + 1 < 10
-                        ? `0${activeMonth + 1}`
-                        : activeMonth + 1
-                }/${activeYear}`}
-            />
+        <div className={`date-piker ${classModule}`}>
+            <Input value={inputValue} />
 
             <span onClick={() => setShow(!show)}>
                 <IconCalendar />
             </span>
-            <div className={show ? '' : 'd-none'}>
+            <div className={classShow}>
                 <TickDatePiker
                     state={state}
                     active={activeDate}

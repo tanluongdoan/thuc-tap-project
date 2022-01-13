@@ -3,7 +3,8 @@ import { ActionModal } from '../actions';
 
 const initialState: object = {
     isModalManager: false,
-    modalManagerData:{},
+    isModalSetting: false,
+    modalManagerData: {},
     isModal: false,
 };
 
@@ -24,9 +25,24 @@ const reducer = (state: object = initialState, action: ActionModal): object => {
             };
             return modal;
         }
+        case ActionType.MODAL_SETTING_OPEN: {
+            const modal = {
+                ...state,
+                isModalSetting: true,
+            };
+            return modal;
+        }
+
+        case ActionType.MODAL_SETTING_CLOSE: {
+            const modal = {
+                ...state,
+                isModalSetting: false,
+            };
+            return modal;
+        }
 
         case ActionType.MODAL_MANAGER_DATA: {
-            const payload= action.payload;
+            const payload = action.payload;
             const modal = {
                 ...state,
                 modalManagerData: payload,

@@ -7,10 +7,23 @@ interface ModalManagerOpen {
 interface ModalManagerClose {
     type: ActionType.MODAL_MANAGER_CLOSE;
 }
-
-interface ModalManagerData {
-    type: ActionType.MODAL_MANAGER_DATA;
-    payload:object
+//========================================
+interface ModalSettingOpen {
+    type: ActionType.MODAL_SETTING_OPEN;
 }
 
-export type ActionModal = ModalManagerOpen | ModalManagerClose |ModalManagerData;
+interface ModalSettingClose {
+    type: ActionType.MODAL_SETTING_CLOSE;
+}
+//==================================================
+interface ModalManagerData {
+    type: ActionType.MODAL_MANAGER_DATA;
+    payload: object;
+}
+
+export type ActionModal =
+    | ModalManagerOpen
+    | ModalManagerClose
+    | ModalSettingOpen
+    | ModalSettingClose
+    | ModalManagerData;
